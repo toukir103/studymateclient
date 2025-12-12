@@ -22,7 +22,7 @@ const TopStudyPartners = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/partners")
+      .get("http://studymate-server-alpha.vercel.app/partners")
       .then((res) => {
         const topPartners = res.data
           .sort((a, b) => b.rating - a.rating)

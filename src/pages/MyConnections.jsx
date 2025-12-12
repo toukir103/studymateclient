@@ -24,7 +24,7 @@ const MyConnections = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `http://localhost:5000/my-connections/${currentUser.email}`
+          `http://studymate-server-alpha.vercel.app/my-connections/${currentUser.email}`
         );
         setRequests(res.data);
       } catch (err) {
@@ -73,7 +73,7 @@ const MyConnections = () => {
       };
 
       const res = await axios.put(
-        `http://localhost:5000/connections/${id}`,
+        `http://studymate-server-alpha.vercel.app/connections/${id}`,
         updatedData
       );
 
@@ -92,7 +92,7 @@ const MyConnections = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this connection?")) return;
     try {
-      await axios.delete(`http://localhost:5000/connections/${id}`);
+      await axios.delete(`http://studymate-server-alpha.vercel.app/connections/${id}`);
       setRequests((prev) => prev.filter((r) => r._id !== id));
       toast.success("Connection deleted successfully!");
     } catch (err) {

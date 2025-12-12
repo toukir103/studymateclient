@@ -21,7 +21,7 @@ const FindPartners = () => {
   const fetchPartners = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/partners", {
+      const res = await axios.get("http://studymate-server-alpha.vercel.app/partners", {
         params: { search: debouncedSearch, sort },
       });
       setPartners(res.data);

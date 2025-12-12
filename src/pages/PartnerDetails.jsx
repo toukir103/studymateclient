@@ -31,7 +31,7 @@ const PartnerDetails = () => {
     const fetchPartner = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:5000/partners/${id}`);
+        const res = await axios.get(`http://studymate-server-alpha.vercel.app/partners/${id}`);
         setPartner(res.data);
       } catch (error) {
         toast.error(error.response?.data?.message || "Failed to load partner details!");
@@ -64,7 +64,7 @@ const PartnerDetails = () => {
       };
 
       const res = await axios.post(
-        `http://localhost:5000/partners/${id}/request`,
+        `http://studymate-server-alpha.vercel.app/partners/${id}/request`,
         requestData
       );
 

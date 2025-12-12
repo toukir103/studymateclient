@@ -51,7 +51,7 @@ const CreateProfile = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/partners",
+        "http://studymate-server-alpha.vercel.app/partners",
         formData
       );
       toast.success("Profile created successfully!");
